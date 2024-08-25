@@ -5,6 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 
 import java.util.Arrays;
 
+import static binary_search.BinarySearch.binarySearchAlternative;
 import static binary_search.BinarySearch.binarySearchBasis;
 import static org.junit.Assert.*;
 
@@ -59,18 +60,18 @@ public class TestBinarySearch {
     @DisplayName("测试 binarySearchAlternative ")
     public void test3() {
         int[] a = {7, 13, 21, 30, 38, 44, 52, 53};
-//        assertEquals(0, binarySearchAlternative(a, 7));
-//        assertEquals(1, binarySearchAlternative(a, 13));
-//        assertEquals(2, binarySearchAlternative(a, 21));
-//        assertEquals(3, binarySearchAlternative(a, 30));
-//        assertEquals(4, binarySearchAlternative(a, 38));
-//        assertEquals(5, binarySearchAlternative(a, 44));
-//        assertEquals(6, binarySearchAlternative(a, 52));
-//        assertEquals(7, binarySearchAlternative(a, 53));
-//
-//        assertEquals(-1, binarySearchAlternative(a, 0));
-//        assertEquals(-1, binarySearchAlternative(a, 15));
-//        assertEquals(-1, binarySearchAlternative(a, 60));
+        assertEquals(0, binarySearchAlternative(a, 7));
+        assertEquals(1, binarySearchAlternative(a, 13));
+        assertEquals(2, binarySearchAlternative(a, 21));
+        assertEquals(3, binarySearchAlternative(a, 30));
+        assertEquals(4, binarySearchAlternative(a, 38));
+        assertEquals(5, binarySearchAlternative(a, 44));
+        assertEquals(6, binarySearchAlternative(a, 52));
+        assertEquals(7, binarySearchAlternative(a, 53));
+
+        assertEquals(-1, binarySearchAlternative(a, 0));
+        assertEquals(-1, binarySearchAlternative(a, 15));
+        assertEquals(-1, binarySearchAlternative(a, 60));
     }
 
     @Test
