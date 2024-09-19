@@ -1,4 +1,4 @@
-package binary_search;
+package algorithm.binary_search;
 
 public class E02Leetcode35 {
     // java 版

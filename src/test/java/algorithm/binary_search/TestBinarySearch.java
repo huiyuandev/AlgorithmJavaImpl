@@ -1,11 +1,11 @@
-package binary_search;
+package algorithm.binary_search;
 
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
 import java.util.Arrays;
 
-import static binary_search.BinarySearch.*;
+import static algorithm.binary_search.BinarySearch.*;
 import static org.junit.Assert.*;
 
 public class TestBinarySearch {
