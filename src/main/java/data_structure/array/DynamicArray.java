@@ -1,5 +1,6 @@
 package data_structure.array;
 
+import javax.annotation.Nonnull;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.function.Consumer;
@@ -33,6 +34,7 @@ public class DynamicArray implements Iterable<Integer> {
 
     /**
      * 向 [0 .. size] 位置添加元素
+     * 时间复杂度: O(n)
      *
      * @param index   索引位置
      * @param element 待添加元素
@@ -43,13 +45,21 @@ public class DynamicArray implements Iterable<Integer> {
         // 添加逻辑
         if (index >= 0 && index < size) {
             // 向后挪动, 空出待插入位置
-            System.arraycopy(array, index,
-                    array, index + 1, size - index);
+            System.arraycopy(
+                    array, // 源数组
+                    index, // 源数组起始索引
+                    array, // 目标数组
+                    index + 1, // 目标数组起始索引
+                    size - index // 拷贝长度
+            );
         }
         array[index] = element;
         size++;
     }
 
+    /**
+     * 扩容
+     */
     private void checkAndGrow() {
         // 容量检查
         if (size == 0) {
@@ -84,6 +94,7 @@ public class DynamicArray implements Iterable<Integer> {
 
     /**
      * 查询元素
+     * 时间复杂度：O(1)
      *
      * @param index 索引位置, 在 [0..size) 区间内
      * @return 该索引位置的元素
@@ -108,9 +119,11 @@ public class DynamicArray implements Iterable<Integer> {
     /**
      * 遍历方法2 - 迭代器遍历
      */
+    @Nonnull
     @Override
     public Iterator<Integer> iterator() {
-        return new Iterator<Integer>() {
+
+        return new Iterator<>() {
             int i = 0;
 
             @Override
@@ -122,6 +135,7 @@ public class DynamicArray implements Iterable<Integer> {
             public Integer next() { // 返回当前元素,并移动到下一个元素
                 return array[i++];
             }
+
         };
     }
 
